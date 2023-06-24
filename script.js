@@ -4,5 +4,5 @@ fetch("header.html", {
       'Content-Type': 'text/html',
     },
 }).then((content) => {
-    document.write(content)
+    document.body(content.text())
 })

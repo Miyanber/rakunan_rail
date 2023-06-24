@@ -11,6 +11,10 @@ header {
     text-align: center;
 }
 
+header.subPage {
+    background-image: url("img/P1000454.jpg");
+}
+
 header img {
     width: 60%;
     margin: 10px;

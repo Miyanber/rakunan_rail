@@ -22,6 +22,11 @@ header img {
     border-radius: 30px;
 }
 
+header.subPage img {
+    width: auto;
+    height: 50%;
+}
+
 header h1 {
     margin: 0;
     padding: 10px;
@@ -57,7 +62,23 @@ header nav li a:hover {
 }
 
 section {
-    padding: 0 200px;
+    padding: 20px 200px;
+}
+
+table {
+    border-collapse: collapse;
+    border: 3px solid #0067b7;
+}
+
+table tr th {
+    border: 3px solid #0067b7;
+    padding: 5px;
+    background-color: #bfdef6;
+}
+
+table tr td {
+    border: 3px solid #0067b7;
+    padding: 5px;
 }
 
 h2 {
@@ -81,7 +102,7 @@ footer {
 
 @media screen and (max-width: 780px) {
     section {
-        padding: 0 20px;
+        padding: 10px 20px;
     }
 
     header img {
@@ -89,5 +110,10 @@ footer {
         margin: 10px;
         border: 2px solid white;
         border-radius: 0px;
+    }
+
+    header.subPage img {
+        width: 80%;
+        height: auto;
     }
 }

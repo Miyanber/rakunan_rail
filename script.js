@@ -5,15 +5,17 @@ const options = {
     },
 }
 
-function loadHeader() {
+function loadHeader(src = "img/P1000454.jpg") {
     fetch("header.html", options)
         .then((content) => content.text()
         ).then((html) => {
             const header = document.createElement("header");
             document.body.insertBefore(header, document.body.firstChild);
-            header.outerHTML = html;
+            header.innerHTML = html;
             header.classList.add("subPage");
-            console.log("loaded header")
+            console.log(header.innerHTML)
+            header.children[1].src = src;
+            console.log("loaded header");
 
             // DOMParserでHTMLを読み込める!
             // const parser = new DOMParser();
@@ -28,7 +30,7 @@ function loadFooter() {
         }).then((html) => {
             const footer = document.createElement("footer");
             document.body.insertBefore(footer, document.body.lastChild);
-            footer.outerHTML = html;
+            footer.innerHTML = html;
             footer.classList.add("subPage");
             console.log("loaded footer")
         })

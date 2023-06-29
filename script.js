@@ -12,7 +12,6 @@ function loadHeader(src = "img/P1000454.jpg") {
             const header = document.createElement("header");
             document.body.insertBefore(header, document.body.firstChild);
             header.innerHTML = html;
-            header.classList.add("subPage");
             console.log(header.innerHTML)
             header.children[1].src = src;
             console.log("loaded header");

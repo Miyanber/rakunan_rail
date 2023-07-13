@@ -39,7 +39,7 @@ header nav ul {
 
 header nav li {
     display: inline-block;
-    padding: 20px 3%;
+    padding: 20px 2%;
     /* background-color: rgb(0, 75, 172); */
     box-sizing: border-box;
 }
@@ -102,6 +102,7 @@ footer {
     header img {
         width: 80%;
         height: auto;
+        max-height: none;
         margin: 10px;
         border: 2px solid white;
         border-radius: 0px;

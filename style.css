@@ -6,8 +6,8 @@ body {
 }
 
 header {
-    background-image: url("img/top113.jpg");
-    background-size: 100%;
+    background-image: url("img/top.jpg");
+    background-size: cover;
     text-align: center;
     background-position: center;
 }
@@ -15,9 +15,10 @@ header {
 header img {
     max-height: 350px;
     max-width: 90%;
-    margin: 10px;
+    margin: 15vh 10px;
     border: 5px solid white;
-    border-radius: 30px;
+    border-radius: 50px;
+    box-shadow: rgba(14, 30, 37, 0.36) 0px 2px 4px 0px, rgba(14, 30, 37, 0.96) 0px 2px 16px 0px;
 }
 
 header h1 {
@@ -25,7 +26,7 @@ header h1 {
     padding: 10px;
     background-color: #0064b0b5;
     color: white;
-    font-size: large;
+    font-size: x-large;
 }
 
 header nav ul {
@@ -48,6 +49,7 @@ header nav li a {
     color: white;
     text-decoration: none;
     transition: color 0.4s;
+    font-size: large;
 }
 
 header nav li a:hover {
@@ -100,7 +102,8 @@ table.magazine {
     border: 0;
 }
 
-table.magazine tr td, table.history tr td {
+table.magazine tr td,
+table.history tr td {
     border: 0;
     border-bottom: 2px solid #cbcbcb;
     border-top: 2px solid #cbcbcb;
@@ -121,7 +124,7 @@ table.magazine tr td.column2 {
 
 table.magazine tr td.column3 {
     background-color: #eef3fa;
-    width:20%;
+    width: 20%;
     /* text-align: center; */
 }
 
@@ -201,6 +204,13 @@ img.logo {
     height: 3em;
 }
 
+/* img.icon {
+    float:inline-start;
+    border: 0;
+    margin: 0;
+    width: 1.5em;
+} */
+
 footer {
     background-color: rgb(0, 89, 205);
     color: white;
@@ -209,6 +219,18 @@ footer {
 }
 
 @media screen and (max-width: 780px) {
+    header h1 {
+        margin: 0;
+        padding: 10px;
+        background-color: #0064b0b5;
+        color: white;
+        font-size: large;
+    }
+
+    header nav li a {
+        font-size: medium;
+    }
+
     section {
         padding: 10px 20px;
     }
@@ -217,8 +239,8 @@ footer {
         width: 80%;
         height: auto;
         max-height: none;
-        margin: 10px;
+        margin: 20vh 0px;
         border: 2px solid white;
-        border-radius: 0px;
+        border-radius: 30px;
     }
 }

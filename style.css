@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
@@ -145,6 +149,7 @@ h2 {
     background: linear-gradient(to right, rgb(106, 196, 255), rgb(255, 255, 255));
     padding: 5px;
     border-left: 5px solid blue;
+    margin-top: 40px;
 }
 
 div.sns {
@@ -207,10 +212,62 @@ img.logo {
 } */
 
 footer {
-    background-color: rgb(0, 89, 205);
-    color: white;
+    border-top: 20px solid rgb(0, 89, 205);
+    background-image: url("img/footer.jpg");
+    background-position: top;
+    background-size: cover;
     padding: 10px;
     text-align: center;
+    height: calc(100vw * 9 / 16);
+}
+
+footer div {
+    background-color: #eff8ffbd;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+footer p {
+    margin: 25px auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer span.icon {
+    margin-right: 1em;
+    border: 2px solid #0067b7;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+footer p.copyright {
+    color: white;
+    text-shadow: 2px 2px 3px black, -2px -2px 3px black;
+}
+
+div.top div {
+    height: 70px;
+    width: 50px;
+    clip-path: polygon(100% 45%, 68% 38%, 75% 100%, 25% 100%, 32% 38%, 0 45%, 50% 0);
+    background-color: rgb(255, 255, 255);
+}
+
+div.top {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    padding: 10px;
+    background-color: #006affbd;
+    opacity: 0;
+    transition: ease .4s opacity;
+}
+
+div.top.display {
+    opacity: 1;
 }
 
 @media screen and (max-width: 780px) {
@@ -237,5 +294,25 @@ footer {
         margin: 20vh 0px;
         border: 2px solid white;
         border-radius: 30px;
+    }
+
+    footer {
+        height: auto;
+        background-position: left;
+    }
+
+    footer p.copyright {
+        margin-bottom: 90px;
+    }
+
+    div.top {
+        right: 5px;
+        bottom: 5px;
+        padding: 5px;
+    }
+
+    div.top div {
+        width: 30px;
+        height: 50px;
     }
 }

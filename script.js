@@ -34,3 +34,12 @@ function loadFooter() {
             console.log("loaded footer")
         })
 }
+
+window.addEventListener('scroll', () => {
+    const content = document.querySelector("div.top");
+    if (100 < window.scrollY) {
+        content.classList.add("display");
+    } else {
+        content.classList.remove("display");
+    }
+});

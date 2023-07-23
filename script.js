@@ -5,7 +5,7 @@ const options = {
     },
 }
 
-function loadHeader(src = "img/P1000454.jpg") {
+function loadHeader(className = null, src = "img/P1000454.jpg") {
     fetch("header.html", options)
         .then((content) => content.text()
         ).then((html) => {
@@ -14,6 +14,7 @@ function loadHeader(src = "img/P1000454.jpg") {
             header.innerHTML = html;
             console.log(header.innerHTML)
             header.children[1].src = src;
+            if (className != null) header.children[1].classList.add(className)
             console.log("loaded header");
 
             // DOMParserでHTMLを読み込める!

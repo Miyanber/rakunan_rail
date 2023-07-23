@@ -84,6 +84,8 @@ a.noLink {
 
 section {
     padding: 20px 15%;
+    background-image: url("img/sky.png");
+    background-attachment: fixed;
 }
 
 section li {
@@ -122,8 +124,12 @@ table.history tr td.column2 {
     background-color: #eef3fa;
 }
 
-table.history tr:nth-of-type(2n) td:nth-of-type(3) {
-    background-color: #ececec;
+table.history tr:nth-of-type(2n) td.column3 {
+    background-color: #f3f3f3;
+}
+
+table.history tr:nth-of-type(2n-1) td.column3 {
+    background-color: #ffffff;
 }
 
 table.magazine tr td,
@@ -171,7 +177,7 @@ table a:hover {
 }
 
 h2 {
-    background: linear-gradient(to right, rgb(106, 196, 255), rgb(255, 255, 255));
+    background: linear-gradient(to right, rgb(106, 196, 255), rgba(255, 255, 255, 0));
     padding: 5px;
     border-left: 5px solid blue;
     margin-top: 40px;
@@ -199,10 +205,11 @@ div.link a>div {
     border-radius: 30px;
     width: 15em;
     transition: .5s background-color;
+    background-color: rgba(255, 255, 255, 0.65);
 }
 
 div.link a>div:hover {
-    background-color: #dff2ff;
+    background-color: #c5e3f7;
     cursor: pointer;
 }
 

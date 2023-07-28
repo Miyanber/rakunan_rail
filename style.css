@@ -336,11 +336,17 @@ div.top.display {
 
     header img {
         width: 80%;
+        max-width: 525px;
         height: auto;
         max-height: none;
         margin: 20vh 0px;
-        border: 2px solid white;
-        border-radius: 30px;
+        border: 3px solid white;
+        border-radius: 35px;
+    }
+
+    header img.topPage {
+        width: 90%;
+        max-width: none;
     }
 
     footer {

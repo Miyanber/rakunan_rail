@@ -143,12 +143,17 @@ table.magazine {
 }
 
 table.history tr td.column1 {
-    background-color: #c2e7ff;
+    color: white;
+    background-color: #0099ff;
+    white-space: nowrap;
     text-align: center;
+    position: sticky;
+    left: 0;
 }
 
 table.history tr td.column2 {
     background-color: #eef3fa;
+    white-space: nowrap;
 }
 
 table.history tr:nth-of-type(2n) td.column3 {

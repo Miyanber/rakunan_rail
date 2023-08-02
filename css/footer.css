@@ -1,0 +1,48 @@
+footer {
+    border-top: 20px solid rgb(0, 89, 205);
+    background-image: url("../img/footer.jpg");
+    background-position: top;
+    background-size: cover;
+    padding: 10px;
+    text-align: center;
+    height: calc(100vw * 9 / 16);
+}
+
+footer div {
+    background-color: #eff8ffbd;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+footer p {
+    margin: 25px auto;
+}
+
+footer a {
+    text-decoration: none;
+    color: black;
+}
+
+footer span.icon {
+    margin-right: 1em;
+    border: 2px solid #0067b7;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+footer p.copyright {
+    color: white;
+    text-shadow: 2px 2px 3px black, -2px -2px 3px black;
+}
+
+@media screen and (max-width: 780px) {
+    footer {
+        height: auto;
+        background-position: left;
+    }
+
+    footer p.copyright {
+        margin-bottom: 90px;
+    }
+}

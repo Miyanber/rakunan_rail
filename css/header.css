@@ -1,0 +1,131 @@
+header {
+    background-image: url("../img/top.jpg");
+    background-size: cover;
+    text-align: center;
+    background-position: center;
+}
+
+header img {
+    max-height: 350px;
+    max-width: 90%;
+    margin: 15vh 10px;
+    border: 5px solid white;
+    border-radius: 50px;
+    box-shadow: rgba(14, 30, 37, 0.36) 0px 2px 4px 0px, rgba(14, 30, 37, 0.96) 0px 2px 16px 0px;
+}
+
+header img.topPage {
+    border-radius: 0;
+}
+
+header h1 {
+    margin: 0;
+    background-color: #0064b0b5;
+    color: white;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: serif;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+nav ul {
+    padding: 20px 20px;
+    background-color: rgb(0, 89, 205);
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    transition: color 0.4s;
+    font-size: large;
+}
+
+nav li a.now::after {
+    position: absolute;
+    left: -10%;
+    content: '';
+    width: 120%;
+    bottom: -3px;
+    height: 1px;
+    background-color: #b0e5ff;
+}
+
+nav li a:hover {
+    color: rgb(255, 221, 0);
+    cursor: pointer;
+}
+
+div.top div {
+    height: 70px;
+    width: 50px;
+    clip-path: polygon(100% 45%, 68% 38%, 75% 100%, 25% 100%, 32% 38%, 0 45%, 50% 0);
+    background-color: rgb(255, 255, 255);
+}
+
+div.top {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    padding: 10px;
+    background-color: #006affbd;
+    opacity: 0;
+    transition: opacity .8s;
+}
+
+div.top.display {
+    opacity: 1;
+}
+
+@media screen and (max-width: 780px) {
+    header h1 {
+        margin: 0;
+        background-color: #0064b0b5;
+        color: white;
+        font-size: large;
+    }
+
+    nav li a {
+        font-size: medium;
+    }
+
+    header img {
+        width: 80%;
+        max-width: 525px;
+        height: auto;
+        max-height: none;
+        margin: 20vh 0px;
+        border: 3px solid white;
+        border-radius: 35px;
+    }
+
+    header img.topPage {
+        width: 90%;
+        max-width: none;
+    }
+
+    div.top {
+        right: 5px;
+        bottom: 5px;
+        padding: 5px;
+    }
+
+    div.top div {
+        width: 30px;
+        height: 50px;
+    }
+}

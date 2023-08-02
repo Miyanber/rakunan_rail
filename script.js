@@ -5,18 +5,18 @@ const options = {
     },
 }
 
-function loadHeader(index, className = null, src = "img/P1000454.jpg") {
+
+function loadHeader(index, className = null, src = "../img/P1000454.jpg") {
     fetch("header.html", options)
-        .then((content) => content.text()
-        ).then((html) => {
-            const header = document.createElement("header");
-            document.body.insertBefore(header, document.body.firstChild);
-            header.innerHTML = html;
-            console.log(header.innerHTML)
-            header.children[1].src = src;
-            header.children[2].children[0].children[index].children[0].classList.add('now');
-            if (className != null) header.children[1].classList.add(className)
-            console.log("loaded header");
+        .then((content) => content.text())
+        .then((html) => {
+            console.log(html);
+            document.body.insertAdjacentHTML("afterbegin", html);
+            const img = document.getElementsByTagName("img")[0];
+            img.src = src;
+            document.getElementsByTagName("nav")[0].children[0].children[index].children[0].classList.add('now');
+            if (className != null) img.classList.add(className);
+            console.log("loaded element");
 
             // DOMParserでHTMLを読み込める!
             // const parser = new DOMParser();
@@ -26,9 +26,8 @@ function loadHeader(index, className = null, src = "img/P1000454.jpg") {
 
 function loadFooter() {
     fetch("footer.html", options)
-        .then((content) => {
-            return content.text()
-        }).then((html) => {
+        .then((content) => content.text())
+        .then((html) => {
             const footer = document.createElement("footer");
             document.body.insertBefore(footer, document.body.lastChild);
             footer.innerHTML = html;
@@ -45,3 +44,16 @@ window.addEventListener('scroll', () => {
         content.classList.remove("display");
     }
 });
+
+function loadHead(name) {
+    document.head.insertAdjacentHTML("afterbegin", html);
+    const img = document.getElementsByTagName("img")[0];
+    img.src = src;
+    document.getElementsByTagName("nav")[0].children[0].children[index].children[0].classList.add('now');
+    if (className != null) img.classList.add(className);
+    console.log("loaded element");
+
+    // DOMParserでHTMLを読み込める!
+    // const parser = new DOMParser();
+    // return parser.parseFromString(html, "text/html");
+}

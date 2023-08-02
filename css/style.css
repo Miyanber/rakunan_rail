@@ -9,41 +9,10 @@ body {
     font-family: 'Noto Sans JP', sans-serif;
 }
 
-header {
-    background-image: url("img/top.jpg");
-    background-size: cover;
-    text-align: center;
-    background-position: center;
-}
-
-header img {
-    max-height: 350px;
-    max-width: 90%;
-    margin: 15vh 10px;
-    border: 5px solid white;
-    border-radius: 50px;
-    box-shadow: rgba(14, 30, 37, 0.36) 0px 2px 4px 0px, rgba(14, 30, 37, 0.96) 0px 2px 16px 0px;
-}
-
-header img.topPage {
-    border-radius: 0;
-}
-
-header h1 {
-    margin: 0;
-    background-color: #0064b0b5;
-    color: white;
-    font-size: x-large;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: serif;
-}
-
 div.icon {
     width: 1.5em;
     height: 1.5em;
-    background-image: url("./apple-touch-icon.png");
+    background-image: url("../apple-touch-icon.png");
     display: inline-block;
     background-size: cover;
     margin-right: 5px;
@@ -54,51 +23,16 @@ div.h1Text {
     padding: 10px 0;
 }
 
-header nav ul {
-    padding: 20px 20px;
-    background-color: rgb(0, 89, 205);
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-header nav li {
-    list-style: none;
-}
-
-header nav li a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    transition: color 0.4s;
-    font-size: large;
-}
-
-header nav li a.now::after {
-    position: absolute;
-    left: -10%;
-    content: '';
-    width: 120%;
-    bottom: -3px;
-    height: 1px;
-    background-color: #b0e5ff;
-}
-
-header nav li a:hover {
-    color: rgb(255, 221, 0);
-    cursor: pointer;
-}
-
 a.deadLink {
     text-decoration: line-through;
     color: rgb(0, 25, 137);
 }
 
-section {
+article {
     padding: 20px 15%;
 }
 
-section::before {
+article::before {
     content: "";
     display: block;
     position: fixed;
@@ -107,11 +41,11 @@ section::before {
     z-index: -1;
     width: 100%;
     height: 100vh;
-    background-image: url(img/sky.png);
+    background-image: url(../img/sky.png);
     background-position: top;
 }
 
-section li {
+article li {
     margin: 5px auto;
 }
 
@@ -269,118 +203,13 @@ img.logo {
     height: 3em;
 }
 
-footer {
-    border-top: 20px solid rgb(0, 89, 205);
-    background-image: url("img/footer.jpg");
-    background-position: top;
-    background-size: cover;
-    padding: 10px;
-    text-align: center;
-    height: calc(100vw * 9 / 16);
-}
-
-footer div {
-    background-color: #eff8ffbd;
-    padding: 20px;
-    border-radius: 50px;
-    display: inline-block;
-}
-
-footer p {
-    margin: 25px auto;
-}
-
-footer a {
-    text-decoration: none;
-    color: black;
-}
-
-footer span.icon {
-    margin-right: 1em;
-    border: 2px solid #0067b7;
-    padding: 5px;
-    border-radius: 15px;
-}
-
-footer p.copyright {
-    color: white;
-    text-shadow: 2px 2px 3px black, -2px -2px 3px black;
-}
-
-div.top div {
-    height: 70px;
-    width: 50px;
-    clip-path: polygon(100% 45%, 68% 38%, 75% 100%, 25% 100%, 32% 38%, 0 45%, 50% 0);
-    background-color: rgb(255, 255, 255);
-}
-
-div.top {
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    padding: 10px;
-    background-color: #006affbd;
-    opacity: 0;
-    transition: ease .4s opacity;
-}
-
-div.top.display {
-    opacity: 1;
-}
-
 @media screen and (max-width: 780px) {
-    header h1 {
-        margin: 0;
-        background-color: #0064b0b5;
-        color: white;
-        font-size: large;
-    }
-
     div.icon {
         margin-right: 0px;
     }
 
-    header nav li a {
-        font-size: medium;
-    }
-
-    section {
+    article {
         padding: 10px 20px;
-    }
-
-    header img {
-        width: 80%;
-        max-width: 525px;
-        height: auto;
-        max-height: none;
-        margin: 20vh 0px;
-        border: 3px solid white;
-        border-radius: 35px;
-    }
-
-    header img.topPage {
-        width: 90%;
-        max-width: none;
-    }
-
-    footer {
-        height: auto;
-        background-position: left;
-    }
-
-    footer p.copyright {
-        margin-bottom: 90px;
-    }
-
-    div.top {
-        right: 5px;
-        bottom: 5px;
-        padding: 5px;
-    }
-
-    div.top div {
-        width: 30px;
-        height: 50px;
     }
 }
 
@@ -393,5 +222,9 @@ div.top.display {
 
     div.table-wrap {
         overflow-x: scroll;
+    }
+
+    div.table-wrap::before {
+        content: "※横にスクロールできます。";
     }
 }

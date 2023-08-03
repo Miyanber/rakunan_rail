@@ -10,7 +10,7 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>洛南高校・附属中学校 鉄道研究部</title>
-    <script src="script.js" defer onload="loadHeader(0, 'topPage'); loadFooter();"></script>
+    <script src="script.js" defer onload="loadHeader(0, 'topPage').then(() => addLoadedClass()); loadFooter();"></script>
 </head>
 
 <body>
@@ -18,7 +18,10 @@
     <article>
         <section>
             <h2>New Release!!</h2>
-            <p>2023年7月、2015年から全く変更のなかったホームページを、時代に合わせて刷新しました。</p>
+            <p>
+                2023年8月、2015年から全く変更のなかったホームページを、時代に合わせて刷新しました。
+            </p>
+            <div></div>
         </section>
 
         <!-- <h2>文化祭特設ページ</h2>
@@ -27,12 +30,13 @@
             <h2>ホームページへようこそ。</h2>
             <p>Rakunan Railway Research Society (RRRS) では、鉄道をはじめ、バス・航空など諸交通機関の総合的な研究を行っています。</p>
             <p>現在は、InstagramやTwitterで主に活動中です。</p>
-
+        </section>
+        <div style="margin: 0; display: flex; justify-content: space-around; flex-direction: row; flex-flow: wrap;">
             <div class="instagram">
                 <blockquote class="instagram-media"
                     data-instgrm-permalink="https://www.instagram.com/p/CtWKEDVLZOn/?utm_source=ig_embed&amp;utm_campaign=loading"
                     data-instgrm-version="14"
-                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:100%; min-width:300px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                     <div style="padding:16px;"> <a
                             href="https://www.instagram.com/p/CtWKEDVLZOn/?utm_source=ig_embed&amp;utm_campaign=loading"
                             style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
@@ -124,11 +128,11 @@
                 <script async src="//www.instagram.com/embed.js"></script>
             </div>
             <div class="twitter">
-                <a class="twitter-timeline" data-height="600px" data-max-width="100%" data-width="600px"
+                <a class="twitter-timeline" data-height="800px" data-max-width="100%" data-width="100%"
                     href="https://twitter.com/rakunan_railway?ref_src=twsrc%5Etfw">Tweets by rakunan_railway</a>
                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
-        </section>
+        </div>
         <section>
             <h2>内部向けリンク</h2>
             <ul>
@@ -150,6 +154,8 @@
             </div>
         </section>
     </article>
+
+    <div class="loading"></div>
 </body>
 
 </html>

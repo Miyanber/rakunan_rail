@@ -10,7 +10,7 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>活動 -洛南高校・附属中学校 鉄道研究部-</title>
-    <script src="script.js" defer onload="loadHeader(2, null, '../img/activity.jpg'); loadFooter();"></script>
+    <script src="script.js" defer onload="loadHeader(2, null, '../img/activity.jpg').then(() => addLoadedClass());; loadFooter();"></script>
 </head>
 
 <body>
@@ -117,6 +117,9 @@
             </ul>
         </section>
     </article>
+
+    <div class="loading"></div>
+    
 </body>
 
 </html>

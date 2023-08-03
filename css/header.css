@@ -12,6 +12,14 @@ header img {
     border: 5px solid white;
     border-radius: 50px;
     box-shadow: rgba(14, 30, 37, 0.36) 0px 2px 4px 0px, rgba(14, 30, 37, 0.96) 0px 2px 16px 0px;
+    opacity: 0;
+    transition: opacity 1s, transform 1s;
+    transform: translateY(150px);
+}
+
+header img.display {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 header img.topPage {
@@ -32,7 +40,7 @@ header h1 {
 nav {
     position: sticky;
     top: 0;
-    z-index: 50;
+    z-index: 2;
 }
 
 nav ul {
@@ -91,7 +99,7 @@ div.top.display {
     opacity: 1;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
     header h1 {
         margin: 0;
         background-color: #0064b0b5;

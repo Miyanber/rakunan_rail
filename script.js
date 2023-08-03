@@ -5,9 +5,8 @@ const options = {
     },
 }
 
-
-function loadHeader(index, className = null, src = "../img/P1000454.jpg") {
-    fetch("header.html", options)
+async function loadHeader(index, className = null, src = "../img/P1000454.jpg") {
+    return await fetch("header.html", options)
         .then((content) => content.text())
         .then((html) => {
             console.log(html);
@@ -24,8 +23,8 @@ function loadHeader(index, className = null, src = "../img/P1000454.jpg") {
         })
 }
 
-function loadFooter() {
-    fetch("footer.html", options)
+async function loadFooter() {
+    return await fetch("footer.html", options)
         .then((content) => content.text())
         .then((html) => {
             const footer = document.createElement("footer");
@@ -44,6 +43,14 @@ window.addEventListener('scroll', () => {
         content.classList.remove("display");
     }
 });
+
+function addLoadedClass() {
+    document.querySelector("div.loading").classList.add("loaded");
+    setTimeout(() => {
+        document.querySelector("header img").classList.add("display");
+    }, 500)
+    
+}
 
 function loadHead(name) {
     document.head.insertAdjacentHTML("afterbegin", html);

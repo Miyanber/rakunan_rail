@@ -36,7 +36,7 @@ footer p.copyright {
     text-shadow: 2px 2px 3px black, -2px -2px 3px black;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 768px) {
     footer {
         height: auto;
         background-position: left;

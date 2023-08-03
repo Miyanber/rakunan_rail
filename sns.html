@@ -10,7 +10,7 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>SNS -洛南高校・附属中学校 鉄道研究部-</title>
-    <script src="script.js" defer onload="loadHeader(5, null, '../img/sns.png'); loadFooter();"></script>
+    <script src="script.js" defer onload="loadHeader(5, null, '../img/sns.png').then(() => addLoadedClass());; loadFooter();"></script>
 </head>
 
 <body>
@@ -43,6 +43,8 @@
             </a>
         </div>
     </article>
+
+    <div class="loading"></div>
 
 </body>
 

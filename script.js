@@ -35,6 +35,24 @@ async function loadFooter() {
         })
 }
 
+/* async function loadSpreadSheetData(className, url) {
+    const latestDate = localStorage.getItem(`latest Update of ${className}`);
+    const latestTable = localStorage.getItem(`${className} table HTML`);
+    const tableElement = document.querySelector("table." + className);
+    if (latestDate == null || latestTable == null || latestDate - Date.now() > 24 * 60 * 60 * 1000) {
+        await fetch(url, options)
+            .then(content => content.text())
+            .then(table => {
+                tableElement.outerHTML = table;
+                console.log(`loaded ${className} table from URL:${url}`);
+                localStorage.setItem(`latest Update of ${className}`, Date.now());
+                localStorage.setItem(`${className} table HTML`, table);
+            })
+    } else {
+        tableElement.outerHTML = latestTable;
+    }
+} */
+
 window.addEventListener('scroll', () => {
     const content = document.querySelector("div.top");
     if (100 < window.scrollY) {
@@ -49,7 +67,7 @@ function addLoadedClass() {
     setTimeout(() => {
         document.querySelector("header img").classList.add("display");
     }, 500)
-    
+
 }
 
 function loadHead(name) {

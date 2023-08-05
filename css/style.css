@@ -32,11 +32,6 @@ div.h1Text {
     padding: 10px 0;
 }
 
-a.deadLink {
-    text-decoration: line-through;
-    color: rgb(0, 25, 137);
-}
-
 section {
     margin: 50px 10%;
 }
@@ -142,14 +137,42 @@ table.magazine tr:nth-of-type(2n) td.column4 {
     background-color: #e6e6e6;
 }
 
-table a {
+article a {
+    display: inline-block;
     text-decoration: none;
-    color: #0800ff;
-    transition: .3s;
+    color: #0067b7;
+    transition: color .3s;
+    position: relative;
 }
 
-table a:hover {
-    color: #009ab2;
+article a:visited {
+    color: #3a006c;
+}
+
+article a::after {
+    position: absolute;
+    /* left: 50%; */
+    left: 0;
+    bottom: -0.1em;
+    content: "";
+    width: 0;
+    height: 0.1em;
+    background-color: #0067b7;
+    /* transform: translateX(-50%); */
+    transition: width .4s;
+}
+
+article a:visited::after {
+    background-color: #3a006c;
+}
+
+article a:hover::after {
+    width: 100%;
+}
+
+article a.deadLink {
+    text-decoration: line-through;
+    color: rgb(0, 25, 137);
 }
 
 div.sns {

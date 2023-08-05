@@ -14,7 +14,7 @@ header img {
     box-shadow: rgba(14, 30, 37, 0.36) 0px 2px 4px 0px, rgba(14, 30, 37, 0.96) 0px 2px 16px 0px;
     opacity: 0;
     transition: opacity 1s, transform 1s;
-    transform: translateY(150px);
+    transform: translateY(8rem);
 }
 
 header img.display {
@@ -40,7 +40,7 @@ header h1 {
 nav {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 100;
 }
 
 nav ul {

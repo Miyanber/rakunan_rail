@@ -87,6 +87,7 @@ table.history tr td.column1 {
     text-align: center;
     position: sticky;
     left: 0;
+    z-index: 10;
 }
 
 table.history tr td.column2 {
@@ -143,6 +144,7 @@ article a {
     color: #0067b7;
     transition: color .3s;
     position: relative;
+    z-index: 1;
 }
 
 article a:visited {
@@ -240,7 +242,7 @@ img.logo {
 
 div.loading {
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     top: 0;
     left: 0;
     height: 100vh;
@@ -260,10 +262,12 @@ div.loading.loaded {
 
     99% {
         opacity: 0;
+        z-index: 1000;
     }
 
     100% {
-        z-index: -2;
+        opacity: 0;
+        z-index: -100;
     }
 }
 

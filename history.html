@@ -10,8 +10,19 @@
     <link href="css/footer.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <title>歴史 -洛南高校・附属中学校 鉄道研究部-</title>
-    <script src="script.js" defer
-        onload="loadHeader(1, null, 'img/history.jpg').then(() => addLoadedClass());; loadFooter();"></script>
+    <script>
+        const setting = {
+            loadHeader: true,
+            loadheaderOptions: {
+                index: 1,
+                img_src: "../img/history.jpg",
+                img_class: "",
+            },
+            loadFooter: true,
+            loadTopCss: true,
+        };
+    </script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>

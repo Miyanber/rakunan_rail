@@ -5,21 +5,51 @@ const options = {
     },
 }
 
-async function loadHeader(index, className = null, src = "../img/P1000454.jpg") {
-    return await fetch("header.html", options)
+console.log(setting);
+
+/**
+ * 
+ * @param {Object} setting 
+ */
+async function main(setting) {
+    if (setting == null) {
+        console.log("設定用オブジェクトが存在しません。");
+    } else {
+        if (setting.loadHeader == true) {
+            const headerOptions = setting.loadheaderOptions;
+            await loadHeader(headerOptions.index, headerOptions.img_src, headerOptions.img_class);
+        }
+        if (setting.loadFooter == true) {
+            await loadFooter();
+        }
+        if (setting.loadTopCss == true) {
+            addLoadedClass();
+        }
+    }
+}
+
+window.onload = main(setting);
+
+async function loadHeader(index, src, className) {
+    return fetch("header.html", options)
         .then((content) => content.text())
-        .then((html) => {
+        .then(async (html) => {
             console.log(html);
             document.body.insertAdjacentHTML("afterbegin", html);
-            const img = document.getElementsByTagName("img")[0];
+            const img = document.getElementById("TopImg");
+            // if (className != null) img.classList.add(className);
             img.src = src;
             document.getElementsByTagName("nav")[0].children[0].children[index].children[0].classList.add('now');
-            if (className != null) img.classList.add(className);
-            console.log("loaded element");
+            console.log("loaded Header");
+            await new Promise((resolve) => {
+                img.addEventListener("load", () => {
+                    resolve();
+                })
+            })
 
             // DOMParserでHTMLを読み込める!
             // const parser = new DOMParser();
-            // return parser.parseFromString(html, "text/html");
+            // return parser.parseFromString(html, "text/html");}) 
         })
 }
 
@@ -67,8 +97,11 @@ function addLoadedClass() {
     setTimeout(() => {
         document.querySelector("header img").classList.add("display");
     }, 500)
-
 }
+
+// window.onload = () => {
+//     addLoadedClass();
+// }
 
 function loadHead(name) {
     document.head.insertAdjacentHTML("afterbegin", html);

@@ -1,9 +1,11 @@
-const loading = document.createElement("div");
-loading.classList.add("loading");
-const loadingElement = document.body.appendChild(loading);
-loadingElement.appendChild(document.createElement("div"));
-const spinner = loadingElement.appendChild(document.createElement("span"));
-spinner.innerHTML = "Loading...";
+document.addEventListener("DOMContentLoaded", () => {
+    const loading = document.createElement("div");
+    loading.classList.add("loading");
+    const loadingElement = document.body.appendChild(loading);
+    loadingElement.appendChild(document.createElement("div"));
+    const spinner = loadingElement.appendChild(document.createElement("span"));
+    spinner.innerHTML = "Loading...";
+})
 
 const options = {
     method: 'GET',

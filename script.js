@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingElement.appendChild(document.createElement("div"));
     const spinner = loadingElement.appendChild(document.createElement("span"));
     spinner.innerHTML = "Loading...";
+    //読み込みを待ってから表示
+    document.body.style.visibility = "visible";
+    main(setting);
 })
 
 const options = {
@@ -36,8 +39,6 @@ async function main(setting) {
         }
     }
 }
-
-window.onload = main(setting);
 
 async function loadHeader(index, src, className) {
     return fetch("header.html", options)
@@ -108,10 +109,6 @@ function addLoadedClass() {
     setTimeout(() => {
         document.querySelector("header img").classList.add("display");
     }, 500)
-}
-
-window.onload = () => {
-    addLoadedClass();
 }
 
 function loadHead(name) {

@@ -7,6 +7,7 @@ html {
 body {
     margin: 0;
     font-family: 'Noto Sans JP', sans-serif;
+    visibility: hidden;
 }
 
 div.icon {
@@ -34,6 +35,10 @@ div.h1Text {
 
 section {
     margin: 50px 10%;
+}
+
+article {
+    margin: 20px 0;
 }
 
 article::before {
@@ -187,10 +192,18 @@ div.link {
     text-align: center;
 }
 
-a.link {
+div.link a {
     display: inline-block;
     text-decoration: none;
     color: black;
+}
+
+div.link a::after {
+    display: none;
+}
+
+div.link a:visited {
+    color: currentColor;
 }
 
 div.link a>div {
@@ -272,7 +285,8 @@ div.loading span {
     font-weight: bold;
 }
 
-div.loading div.loaded, div.loading span.loaded {
+div.loading div.loaded,
+div.loading span.loaded {
     display: none;
 }
 

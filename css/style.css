@@ -242,6 +242,9 @@ img.logo {
 
 div.loading {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1000;
     top: 0;
     left: 0;
@@ -250,11 +253,44 @@ div.loading {
     background-color: white;
 }
 
+div.loading div {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+    border: 2rem dotted rgb(0, 118, 160);
+    animation: 5s linear infinite rotate;
+}
+
+div.loading span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(0, 118, 160);
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
+
+div.loading div.loaded, div.loading span.loaded {
+    display: none;
+}
+
 div.loading.loaded {
     animation: 1s loading forwards;
 }
 
-@keyframes loading{
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading {
     0% {
         opacity: 1;
         z-index: 1000;

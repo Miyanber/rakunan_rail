@@ -1,3 +1,10 @@
+const loading = document.createElement("div");
+loading.classList.add("loading");
+const loadingElement = document.body.appendChild(loading);
+loadingElement.appendChild(document.createElement("div"));
+const spinner = loadingElement.appendChild(document.createElement("span"));
+spinner.innerHTML = "Loading...";
+
 const options = {
     method: 'GET',
     headers: {
@@ -94,14 +101,16 @@ window.addEventListener('scroll', () => {
 
 function addLoadedClass() {
     document.querySelector("div.loading").classList.add("loaded");
+    document.querySelector("div.loading div").classList.add("loaded");
+    document.querySelector("div.loading span").classList.add("loaded");
     setTimeout(() => {
         document.querySelector("header img").classList.add("display");
     }, 500)
 }
 
-// window.onload = () => {
-//     addLoadedClass();
-// }
+window.onload = () => {
+    addLoadedClass();
+}
 
 function loadHead(name) {
     document.head.insertAdjacentHTML("afterbegin", html);

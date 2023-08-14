@@ -24,6 +24,10 @@ footer a {
     color: black;
 }
 
+img.logo {
+    height: 3em;
+}
+
 footer span.icon {
     margin-right: 1em;
     border: 2px solid #0067b7;

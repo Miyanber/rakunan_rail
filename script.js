@@ -25,7 +25,7 @@ console.log(setting);
  */
 async function main(setting) {
     if (setting == null) {
-        console.log("設定用オブジェクトが存在しません。");
+        console.warn("設定用オブジェクトが存在しません。");
     } else {
         if (setting.loadHeader == true) {
             const headerOptions = setting.loadheaderOptions;

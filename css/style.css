@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
 
+/* 共通部分 */
 html {
     scroll-behavior: smooth;
 }
@@ -10,15 +11,6 @@ body {
     visibility: hidden;
 }
 
-div.icon {
-    width: 1.5em;
-    height: 1.5em;
-    background-image: url("../apple-touch-icon.png");
-    display: inline-block;
-    background-size: cover;
-    margin-right: 5px;
-}
-
 h2 {
     background: linear-gradient(to right, rgb(106, 196, 255), rgba(255, 255, 255, 0));
     padding: 10px;
@@ -26,11 +18,6 @@ h2 {
     border-left: 5px solid blue;
     font-family: serif;
     margin-bottom: 30px;
-}
-
-div.h1Text {
-    display: inline-block;
-    padding: 10px 0;
 }
 
 section {
@@ -56,91 +43,6 @@ article::before {
 
 article li {
     margin: 5px auto;
-}
-
-table {
-    border-collapse: collapse;
-    border: 3px solid #0067b7;
-}
-
-
-table tr th {
-    border: 3px solid #0067b7;
-    padding: 5px;
-    background-color: #bfdef6;
-}
-
-table tr td {
-    border: 3px solid #0067b7;
-    padding: 5px;
-}
-
-table.activity tr td,
-table.activity tr th {
-    padding: 10px;
-}
-
-table.history,
-table.magazine {
-    border: 0;
-}
-
-table.history tr td.column1 {
-    color: white;
-    background-color: #0099ff;
-    white-space: nowrap;
-    text-align: center;
-    position: sticky;
-    left: 0;
-    z-index: 10;
-}
-
-table.history tr td.column2 {
-    background-color: #eef3fa;
-    white-space: nowrap;
-}
-
-table.history tr:nth-of-type(2n) td.column3 {
-    background-color: #f3f3f3;
-}
-
-table.history tr:nth-of-type(2n-1) td.column3 {
-    background-color: #ffffff;
-}
-
-table.magazine tr td,
-table.history tr td {
-    border: 0;
-    border-bottom: 2px solid #cbcbcb;
-    border-top: 2px solid #cbcbcb;
-}
-
-table.magazine tr td.column1 {
-    color: white;
-    background-color: #0099ff;
-    white-space: nowrap;
-    text-align: center;
-    position: sticky;
-    left: 0;
-}
-
-table.magazine tr td.column2 {
-    background-color: #f4fbff;
-    white-space: nowrap;
-    text-align: center;
-}
-
-table.magazine tr td.column3 {
-    background-color: #eef3fa;
-    /* text-align: center; */
-}
-
-table.magazine tr td.column4 {
-    background-color: #f6f6f6;
-}
-
-table.magazine tr:nth-of-type(2n) td.column4 {
-    background-color: #e6e6e6;
 }
 
 article a {
@@ -182,75 +84,20 @@ article a.deadLink {
     color: rgb(0, 25, 137);
 }
 
-div.sns {
-    box-sizing: border-box;
-    width: 45%;
-    display: inline-block;
+table {
+    border-collapse: collapse;
+    border: 3px solid #0067b7;
 }
 
-div.link {
-    text-align: center;
+table tr th {
+    border: 3px solid #0067b7;
+    padding: 5px;
+    background-color: #bfdef6;
 }
 
-div.link a {
-    display: inline-block;
-    text-decoration: none;
-    color: black;
-}
-
-div.link a::after {
-    display: none;
-}
-
-div.link a:visited {
-    color: currentColor;
-}
-
-div.link a>div {
-    margin: 10px;
-    border: 4px solid rgb(0, 120, 189);
-    border-radius: 30px;
-    width: 15em;
-    transition: .5s background-color;
-    background-color: rgba(255, 255, 255, 0.65);
-}
-
-div.link a>div:hover {
-    background-color: #c5e3f7;
-    cursor: pointer;
-}
-
-div.link div div {
-    font-size: large;
-    display: inline-block;
-    vertical-align: middle;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-div.link div div:nth-of-type(1) {
-    width: 54%;
-    text-align: left;
-    padding-left: 1.5em;
-}
-
-div.link div div:nth-of-type(2) {
-    width: 44%;
-    text-align: center;
-}
-
-div.twitter {
-    width: 500px;
-    max-width: 90%;
-}
-
-div.instagram {
-    width: 500px;
-    max-width: 90%;
-}
-
-img.logo {
-    height: 3em;
+table tr td {
+    border: 3px solid #0067b7;
+    padding: 5px;
 }
 
 div.loading {
@@ -321,31 +168,161 @@ div.loading.loaded {
     }
 }
 
-/* img.old_page {
-    max-width: 50%;
-    float: right;
-    margin-left: 20px;
-} */
+/* TOP */
+
+div.flexSns {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-flow: wrap;
+}
+
+div.twitter {
+    width: 500px;
+    max-width: 90%;
+}
+
+div.instagram {
+    width: 500px;
+    max-width: 90%;
+}
+
+/* 歴史 */
+
+table.history,
+table.magazine {
+    border: 0;
+}
+
+table.history tr td,
+table.magazine tr td {
+    border: 0;
+    border-bottom: 2px solid #cbcbcb;
+    border-top: 2px solid #cbcbcb;
+}
+
+table.history tr td.column1,
+table.magazine tr td.column1 {
+    color: white;
+    background-color: #0099ff;
+    white-space: nowrap;
+    text-align: center;
+    position: sticky;
+    left: 0;
+    z-index: 10;
+}
+
+table.history tr td.column2 {
+    background-color: #eef3fa;
+    white-space: nowrap;
+}
+
+table.history tr:nth-of-type(2n) td.column3 {
+    background-color: #f3f3f3;
+}
+
+table.history tr:nth-of-type(2n-1) td.column3 {
+    background-color: #ffffff;
+}
+
+/* 活動 */
+
+table.activity tr td,
+table.activity tr th {
+    padding: 10px;
+}
+
+/* 部誌 */
+
+table.magazine tr td.column2 {
+    background-color: #f4fbff;
+    white-space: nowrap;
+    text-align: center;
+}
+
+table.magazine tr td.column3 {
+    background-color: #eef3fa;
+    /* text-align: center; */
+}
+
+table.magazine tr td.column4 {
+    background-color: #f6f6f6;
+}
+
+table.magazine tr:nth-of-type(2n) td.column4 {
+    background-color: #e6e6e6;
+}
+
+/* リンク */
+
+
+/* SNS */
+
+div.sns {
+    box-sizing: border-box;
+    width: 45%;
+    display: inline-block;
+}
+
+div.linkBox {
+    text-align: center;
+}
+
+div.linkBox a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+}
+
+div.linkBox a::after {
+    display: none;
+}
+
+div.linkBox a:visited {
+    color: currentColor;
+}
+
+div.linkBox a>div {
+    margin: 10px;
+    border: 4px solid rgb(0, 120, 189);
+    border-radius: 30px;
+    width: 15em;
+    transition: .5s background-color;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+div.linkBox a>div:hover {
+    background-color: #c5e3f7;
+    cursor: pointer;
+}
+
+div.linkBox div div {
+    font-size: large;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+div.linkBox div div:nth-of-type(1) {
+    width: 54%;
+    text-align: left;
+    padding-left: 1.5em;
+}
+
+div.linkBox div div:nth-of-type(2) {
+    width: 44%;
+    text-align: center;
+}
 
 @media screen and (max-width: 768px) {
-    div.icon {
-        margin-right: 0px;
-    }
-
     section {
         margin: 50px 20px;
     }
-
-    /* img.old_page {
-        max-width: none;
-        width: 80%;
-        float: none;
-        margin-left: 0px;
-    } */
 }
 
 @media screen and (max-width: 1000px) {
-
     table.history,
     table.magazine {
         white-space: nowrap;
@@ -357,5 +334,7 @@ div.loading.loaded {
 
     div.table-wrap::before {
         content: "※横にスクロールできます。";
+        position: sticky;
+        left: 0;
     }
 }

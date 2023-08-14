@@ -21,12 +21,28 @@ header img.display {
     animation: img_animation 1s forwards;
 }
 
-@keyframes img_animation{
+div.h1Text {
+    display: inline-block;
+    padding: 10px 0;
+}
+
+div.icon {
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("../apple-touch-icon.png");
+    display: inline-block;
+    background-size: cover;
+    margin-right: 5px;
+}
+
+
+@keyframes img_animation {
     from {
         z-index: 1;
         opacity: 0;
         transform: translateY(8rem);
     }
+
     to {
         z-index: 1;
         opacity: 1;
@@ -139,6 +155,10 @@ div.top.display {
         width: 90%;
         max-width: none;
     } */
+
+    div.icon {
+        margin-right: 0px;
+    }
 
     div.top {
         right: 5px;

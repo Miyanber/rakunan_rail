@@ -1,3 +1,6 @@
+//設定内容を出力
+console.log(setting);
+
 document.addEventListener("DOMContentLoaded", () => {
     const loading = document.createElement("div");
     loading.classList.add("loading");
@@ -5,11 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
     loadingElement.appendChild(document.createElement("div"));
     const spinner = loadingElement.appendChild(document.createElement("span"));
     spinner.innerHTML = "Loading...";
-    //読み込みを待ってから表示
+    //DOMContentLoadedで読み込みを待ってから表示
     document.body.style.visibility = "visible";
     main(setting);
 })
 
+//fetchのオプション(リクエスト)
 const options = {
     method: 'GET',
     headers: {
@@ -17,11 +21,9 @@ const options = {
     },
 }
 
-console.log(setting);
-
 /**
  * 
- * @param {Object} setting 
+ * @param {Object} setting 設定用オブジェクト
  */
 async function main(setting) {
     if (setting == null) {
@@ -40,16 +42,24 @@ async function main(setting) {
     }
 }
 
-async function loadHeader(index, src, className) {
+/**
+ * 
+ * @param {number} index TOPページを0番目としたとき、何番目のページか
+ * @param {string} src ヘッダー写真のパス
+ * @param {string} className （写真につけるクラス名）未使用のため設定不要
+ * 
+ * ヘッダーを読み込む関数
+ */
+async function loadHeader(index, src, className = "") {
     return fetch("header.html", options)
         .then((content) => content.text())
         .then(async (html) => {
             console.log(html);
             document.body.insertAdjacentHTML("afterbegin", html);
             const img = document.getElementById("TopImg");
-            // if (className != null) img.classList.add(className);
+            // if (!className) img.classList.add(className);
             img.src = src;
-            document.getElementsByTagName("nav")[0].children[0].children[index].children[0].classList.add('now');
+            document.querySelectorAll("nav ul li a")[index].classList.add('current');
             console.log("loaded Header");
             await new Promise((resolve) => {
                 img.addEventListener("load", () => {
@@ -63,6 +73,10 @@ async function loadHeader(index, src, className) {
         })
 }
 
+/**
+ * 
+ * フッターを読み込む関数
+ */
 async function loadFooter() {
     return await fetch("footer.html", options)
         .then((content) => content.text())
@@ -93,6 +107,7 @@ async function loadFooter() {
     }
 } */
 
+//スクロール量が100px以上の場合にTOPボタンを表示
 window.addEventListener('scroll', () => {
     const content = document.querySelector("div.top");
     if (100 < window.scrollY) {
@@ -102,6 +117,9 @@ window.addEventListener('scroll', () => {
     }
 });
 
+/**
+ * 読み込み完了時にクラスを付与
+ */
 function addLoadedClass() {
     document.querySelector("div.loading").classList.add("loaded");
     document.querySelector("div.loading div").classList.add("loaded");
@@ -111,7 +129,7 @@ function addLoadedClass() {
     }, 500)
 }
 
-function loadHead(name) {
+/* function loadHead(name) {
     document.head.insertAdjacentHTML("afterbegin", html);
     const img = document.getElementsByTagName("img")[0];
     img.src = src;
@@ -122,4 +140,4 @@ function loadHead(name) {
     // DOMParserでHTMLを読み込める!
     // const parser = new DOMParser();
     // return parser.parseFromString(html, "text/html");
-}
+}*/

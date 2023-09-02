@@ -93,13 +93,13 @@ nav li a {
     font-size: large;
 }
 
-nav li a.now::after {
+nav li a.current::after {
     position: absolute;
     left: -10%;
     content: '';
     width: 120%;
-    bottom: -3px;
-    height: 1px;
+    bottom: -4px;
+    height: 2px;
     background-color: #b0e5ff;
 }
 

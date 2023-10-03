@@ -91,13 +91,13 @@ table {
 
 table tr th {
     border: 3px solid #0067b7;
-    padding: 5px;
+    padding: 7px;
     background-color: #bfdef6;
 }
 
 table tr td {
     border: 3px solid #0067b7;
-    padding: 5px;
+    padding: 7px;
 }
 
 div.loading {

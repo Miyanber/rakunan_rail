@@ -1,4 +1,19 @@
 .tmp.driveupload/
 .tmp.drivedownload/
-.gitattributes
 .vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Secrets / env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs / dependencies
+*.log
+node_modules/

@@ -1,6 +1,3 @@
-//設定内容を出力
-console.log(setting);
-
 document.addEventListener("DOMContentLoaded", () => {
     const loading = document.createElement("div");
     loading.classList.add("loading");
@@ -54,7 +51,6 @@ async function loadHeader(index, src, className = "") {
     return fetch("header.html", options)
         .then((content) => content.text())
         .then(async (html) => {
-            console.log(html);
             document.body.insertAdjacentHTML("afterbegin", html);
             const img = document.getElementById("TopImg");
             // if (!className) img.classList.add(className);

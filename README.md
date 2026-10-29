@@ -1,7 +1,7 @@
 # 洛南高校・附属中学校 鉄道研究部 公式サイト
 
 Rakunan Railway Research Society (RRRS) の公式ホームページのソースコードです。
-ビルド不要の静的サイト（HTML / CSS / JavaScript）で、Azure Static Web Apps にデプロイされます。
+ビルド不要の静的サイト（HTML / CSS / JavaScript）で、FC2ホームページ等で運用されています。
 
 ## ローカルでの確認方法
 
@@ -24,11 +24,6 @@ npx serve .
 | `css/` | スタイルシート |
 | `script.js` | ヘッダー・フッター読み込み等 |
 | `img/` | 画像 |
-
-## デプロイ
-
-`main` ブランチへの push で GitHub Actions (Azure Static Web Apps) が自動デプロイします。
-リポジトリシークレット `AZURE_STATIC_WEB_APPS_API_TOKEN_AGREEABLE_MUD_01C6C4E00` が必要です。
 
 ## ライセンス
 
